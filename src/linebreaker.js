@@ -1,14 +1,11 @@
 'use strict'
 
 const UnicodeTrie = require('unicode-trie')
-const fs = require('fs')
-const base64 = require('base64-js')
 const ref = require('./classes')
 const { BK, CR, LF, NL, CB, BA, SP, WJ, AI, AL, SA, SG, XX, CJ, ID, NS, characterClasses} = require('./classes')
 const { DI_BRK, IN_BRK, CI_BRK, CP_BRK, PR_BRK, pairTable } = require('./pairs')
 
-const data = base64.toByteArray(fs.readFileSync(__dirname + '/classes.trie', 'base64'))
-const classTrie = new UnicodeTrie(data)
+const classTrie = new UnicodeTrie(hex2ab(require('./classes.json').buf))
 
 class Break {
   constructor(position, required) {
@@ -155,4 +152,14 @@ function mapFirst(c) {
     default:
       return c
   }
+}
+
+function hex2ab(hex) {
+  const view = new Uint8Array(hex.length / 2)
+
+  for (let i = 0; i < hex.length; i += 2) {
+    view[i / 2] = parseInt(hex.substring(i, i + 2), 16)
+  }
+
+  return view
 }

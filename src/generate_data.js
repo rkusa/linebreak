@@ -32,5 +32,6 @@ request('http://www.unicode.org/Public/7.0.0/ucd/LineBreak.txt', function(err, r
     end = rangeEnd
   }
   trie.setRange(parseInt(start, 16), parseInt(end, 16), classes[type], true)
-  fs.writeFileSync(__dirname + '/classes.trie', trie.toBuffer())
+  // fs.writeFileSync(__dirname + '/classes.trie', trie.toBuffer())
+  fs.writeFileSync(__dirname + '/classes.json', '{"buf": "' + Buffer.from(trie.toBuffer()).toString('hex') + '"}')
 })
