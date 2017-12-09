@@ -1,4 +1,10 @@
 # linebreak
+
+This is a fork of [devongovett/linebreak](https://github.com/devongovett/linebreak).
+
+---
+
+
 An implementation of the Unicode Line Breaking Algorithm (UAX #14)
 
 > Line breaking, also known as word wrapping, is the process of breaking a section of text into lines such that it will fit in the

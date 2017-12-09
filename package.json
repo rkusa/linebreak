@@ -4,7 +4,7 @@
   "description": "An implementation of the Unicode Line Breaking Algorithm (UAX #14)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devongovett/linebreaker.git"
+    "url": "https://github.com/rkusa/linebreaker.git"
   },
   "keywords": [
     "unicode",
@@ -14,9 +14,9 @@
   "author": "Devon Govett <devongovett@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devongovett/linebreaker/issues"
+    "url": "https://github.com/rkusa/linebreaker/issues"
   },
-  "homepage": "https://github.com/devongovett/linebreaker",
+  "homepage": "https://github.com/rkusa/linebreaker",
   "dependencies": {
     "unicode-trie": "^0.3.0"
   },
